@@ -7,7 +7,7 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Watering Can" parent="." instance=ExtResource("3_dhshf")]
+[node name="WateringCan" parent="." instance=ExtResource("3_dhshf")]
 position = Vector2(507, 396)
 freeze = false
 
