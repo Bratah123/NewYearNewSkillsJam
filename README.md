@@ -6,3 +6,4 @@ The game takes place on a humble little farm. Where our main character (Name to 
 
 # Installation
 1. Install [Godot](https://godotengine.org/download/windows/). Team Singularity uses Godot 4.2.1
+2. Import project into Godot
