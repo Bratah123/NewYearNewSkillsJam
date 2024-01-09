@@ -5,11 +5,12 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_chwfx"]
-radius = 9.51315
+radius = 9.55249
 
 [node name="Grabbable" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_0ftv0")
 gravity_scale = 0.0
+freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
