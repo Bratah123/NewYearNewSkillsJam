@@ -6,6 +6,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_ra5ri")]
+position = Vector2(570, 315)
 
 [node name="Truck" parent="." instance=ExtResource("1_a5mrr")]
 position = Vector2(1124, 284)
