@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://bonbjxcg5jnt1"]
+[gd_scene load_steps=2 format=3 uid="uid://bonbjxcg5jnt1"]
 
-[node name="Truck" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dwckgk0up8lmb" path="res://assets/truck.png" id="1_3seo8"]
+
+[node name="Truck" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("1_3seo8")
