@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://bi278ukanovvd"]
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 537.0
+offset_top = 271.0
+offset_right = 619.0
+offset_bottom = 344.0
+text = "click here"
