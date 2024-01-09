@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://beg3x22pph4dk"]
+[gd_scene load_steps=3 format=3 uid="uid://mpibfbaekv2f"]
 
 [ext_resource type="PackedScene" uid="uid://bonbjxcg5jnt1" path="res://game/truck.tscn" id="1_a5mrr"]
-[ext_resource type="PackedScene" uid="uid://bmv15mn7wtyit" path="res://game/player.tscn" id="2_ra5ri"]
+[ext_resource type="PackedScene" path="res://game/player.tscn" id="2_ra5ri"]
 
 [node name="Game" type="Node2D"]
 
@@ -12,3 +12,4 @@ position = Vector2(1124, 284)
 position = Vector2(1124, 396)
 
 [node name="Player" parent="." instance=ExtResource("2_ra5ri")]
+position = Vector2(548, 312)
