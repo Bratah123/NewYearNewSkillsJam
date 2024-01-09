@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bonbjxcg5jnt1"]
+[gd_scene load_steps=12 format=3 uid="uid://bonbjxcg5jnt1"]
 
 [ext_resource type="Texture2D" uid="uid://dwckgk0up8lmb" path="res://assets/truck.png" id="1_3seo8"]
+[ext_resource type="Script" path="res://game/truck.gd" id="1_chq34"]
 [ext_resource type="Texture2D" uid="uid://c27xwjdc5tegl" path="res://assets/text_bubble.png" id="2_pf5iv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ia4ro"]
@@ -42,6 +43,7 @@ turbulence_noise_scale = 0.0
 [node name="Truck" type="Area2D"]
 texture_filter = 1
 scale = Vector2(6, 6)
+script = ExtResource("1_chq34")
 
 [node name="TruckSprite" type="Sprite2D" parent="."]
 texture_filter = 1
