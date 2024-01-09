@@ -41,3 +41,5 @@ text = "Overcropped"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Start" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
