@@ -5,11 +5,10 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource("2_ra5ri")]
+
 [node name="Truck" parent="." instance=ExtResource("1_a5mrr")]
 position = Vector2(1124, 284)
 
 [node name="Truck2" parent="." instance=ExtResource("1_a5mrr")]
 position = Vector2(1124, 396)
-
-[node name="Player" parent="." instance=ExtResource("2_ra5ri")]
-position = Vector2(548, 312)
