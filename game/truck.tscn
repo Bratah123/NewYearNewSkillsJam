@@ -1,17 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://bonbjxcg5jnt1"]
+[gd_scene load_steps=11 format=3 uid="uid://bonbjxcg5jnt1"]
 
 [ext_resource type="Texture2D" uid="uid://dwckgk0up8lmb" path="res://assets/truck.png" id="1_3seo8"]
+[ext_resource type="Texture2D" uid="uid://c27xwjdc5tegl" path="res://assets/text_bubble.png" id="2_pf5iv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ia4ro"]
 size = Vector2(27, 13)
+
+[sub_resource type="Gradient" id="Gradient_m2f77"]
+offsets = PackedFloat32Array(0, 0.0163934, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.885246, 0.885246, 0.885246, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jht0d"]
+gradient = SubResource("Gradient_m2f77")
+
+[sub_resource type="Gradient" id="Gradient_ierx5"]
+offsets = PackedFloat32Array(0.639344, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d5pwg"]
+gradient = SubResource("Gradient_ierx5")
+
+[sub_resource type="Curve" id="Curve_3haoj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j4xhl"]
+curve = SubResource("Curve_3haoj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8ag16"]
+particle_flag_disable_z = true
+gravity = Vector3(-98, 0, 0)
+scale_min = 14.24
+scale_max = 14.24
+scale_curve = SubResource("CurveTexture_j4xhl")
+color_ramp = SubResource("GradientTexture1D_d5pwg")
+color_initial_ramp = SubResource("GradientTexture1D_jht0d")
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
 
 [node name="Truck" type="Area2D"]
 texture_filter = 1
 scale = Vector2(6, 6)
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="TruckSprite" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_3seo8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_ia4ro")
+
+[node name="TextBubbleSprite" type="Sprite2D" parent="."]
+position = Vector2(-26.1667, -11)
+scale = Vector2(0.861979, 0.846354)
+texture = ExtResource("2_pf5iv")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-14.1667, 5.16667)
+process_material = SubResource("ParticleProcessMaterial_8ag16")
