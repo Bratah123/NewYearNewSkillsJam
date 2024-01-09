@@ -14,3 +14,7 @@ config/name="New Year New Skills Jam"
 run/main_scene="res://game/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/resizable=false
