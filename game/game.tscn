@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://mpibfbaekv2f"]
+[gd_scene load_steps=4 format=3 uid="uid://mpibfbaekv2f"]
 
 [ext_resource type="PackedScene" uid="uid://bonbjxcg5jnt1" path="res://game/truck.tscn" id="1_a5mrr"]
 [ext_resource type="PackedScene" uid="uid://bmv15mn7wtyit" path="res://game/player.tscn" id="2_ra5ri"]
+[ext_resource type="PackedScene" uid="uid://bxkcjb36kf375" path="res://game/grabbables/watering_can.tscn" id="3_dhshf"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Grabbable" parent="." instance=ExtResource("3_dhshf")]
+position = Vector2(507, 396)
 
 [node name="Player" parent="." instance=ExtResource("2_ra5ri")]
 position = Vector2(570, 315)

@@ -1,5 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxkcjb36kf375"]
+[gd_scene load_steps=5 format=3 uid="uid://bxkcjb36kf375"]
 
-[ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_2jcuq"]
+[ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_g1yxk"]
+[ext_resource type="Texture2D" uid="uid://bc2tbxake2pqx" path="res://assets/watering_can.png" id="2_or36v"]
 
-[node name="Grabbable" instance=ExtResource("1_2jcuq")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jicr4"]
+radius = 6.5
+height = 19.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jxg5"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -98, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
+
+[node name="Grabbable" instance=ExtResource("1_g1yxk")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CapsuleShape2D_jicr4")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+position = Vector2(0, -5.5)
+texture = ExtResource("2_or36v")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="1"]
+modulate = Color(0, 1, 1, 1)
+texture_filter = 1
+position = Vector2(0, -28)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_3jxg5")
