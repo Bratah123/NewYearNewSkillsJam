@@ -1,15 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi278ukanovvd"]
+[gd_scene load_steps=3 format=3 uid="uid://bi278ukanovvd"]
 
 [ext_resource type="Script" path="res://game/main_menu.gd" id="1_i05p4"]
+[ext_resource type="Texture2D" uid="uid://btv0nxyidofey" path="res://assets/start_button.png" id="2_c6ugy"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_i05p4")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 537.0
-offset_top = 271.0
-offset_right = 619.0
-offset_bottom = 344.0
+offset_left = 750.0
+offset_top = 262.0
+offset_right = 832.0
+offset_bottom = 335.0
 text = "click here"
 
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 525.0
+offset_top = 269.0
+offset_right = 557.0
+offset_bottom = 301.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_c6ugy")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
