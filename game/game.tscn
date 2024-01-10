@@ -1,10 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://beg3x22pph4dk"]
+[gd_scene load_steps=22 format=3 uid="uid://mpibfbaekv2f"]
 
 [ext_resource type="Texture2D" uid="uid://bca0blonpdt7h" path="res://assets/soil_tile-1.png" id="1_7cpqq"]
 [ext_resource type="PackedScene" uid="uid://bonbjxcg5jnt1" path="res://game/truck.tscn" id="1_a5mrr"]
 [ext_resource type="Texture2D" uid="uid://do21qj5jjt1m3" path="res://assets/tilled_soil_tile.png" id="2_2eyib"]
-[ext_resource type="PackedScene" path="res://game/grabbables/carrot_seed.tscn" id="2_4xu0l"]
-[ext_resource type="PackedScene" path="res://game/player.tscn" id="2_ra5ri"]
+[ext_resource type="PackedScene" uid="uid://c1xtp8yecmex5" path="res://game/grabbables/carrot_seed.tscn" id="2_4xu0l"]
+[ext_resource type="PackedScene" uid="uid://bmv15mn7wtyit" path="res://game/player.tscn" id="2_ra5ri"]
 [ext_resource type="Texture2D" uid="uid://q3s3f78fod5l" path="res://assets/grass_tile.png" id="3_bwb2q"]
 [ext_resource type="PackedScene" uid="uid://bxkcjb36kf375" path="res://game/grabbables/watering_can.tscn" id="3_dhshf"]
 [ext_resource type="Texture2D" uid="uid://cbjpormuewadb" path="res://assets/fence_left_tile.png" id="4_8k78j"]
@@ -152,8 +152,6 @@ sources/5 = SubResource("TileSetAtlasSource_kp44a")
 sources/6 = SubResource("TileSetAtlasSource_vp16c")
 sources/7 = SubResource("TileSetAtlasSource_rtokd")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvwbv"]
-
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -184,11 +182,6 @@ freeze = false
 
 [node name="Player" parent="." instance=ExtResource("2_ra5ri")]
 position = Vector2(570, 315)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-visible = false
-position = Vector2(-1, 0)
-shape = SubResource("CapsuleShape2D_rvwbv")
 
 [node name="Truck" parent="." instance=ExtResource("1_a5mrr")]
 position = Vector2(1124, 284)

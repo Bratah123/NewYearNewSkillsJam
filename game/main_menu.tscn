@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://bi278ukanovvd"]
 
 [ext_resource type="Script" path="res://game/main_menu.gd" id="1_i05p4"]
-[ext_resource type="Texture2D" uid="uid://cea74p1hk3svh" path="res://assets/start_button.png" id="2_c6ugy"]
+[ext_resource type="Texture2D" uid="uid://btv0nxyidofey" path="res://assets/start_button.png" id="2_c6ugy"]
 [ext_resource type="Texture2D" uid="uid://q3s3f78fod5l" path="res://assets/grass_tile.png" id="2_lag25"]
 [ext_resource type="Texture2D" uid="uid://llvkdyoas0kj" path="res://assets/help_button.png" id="3_sq0qy"]
 [ext_resource type="Texture2D" uid="uid://bca0blonpdt7h" path="res://assets/soil_tile-1.png" id="3_uyfvg"]
 [ext_resource type="FontFile" uid="uid://bojn4qknbfvir" path="res://assets/fonts/Minecraft.ttf" id="4_6cenq"]
 [ext_resource type="Texture2D" uid="uid://do21qj5jjt1m3" path="res://assets/tilled_soil_tile.png" id="4_etd5b"]
-[ext_resource type="Texture2D" uid="uid://bictoqlloc26t" path="res://assets/seed_bag.png" id="5_12tn0"]
+[ext_resource type="Texture2D" uid="uid://bswamt4d5en7h" path="res://assets/seed_bag.png" id="5_12tn0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7lehl"]
 texture = ExtResource("2_lag25")
