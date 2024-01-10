@@ -1,18 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmv15mn7wtyit"]
+[gd_scene load_steps=5 format=3 uid="uid://bmv15mn7wtyit"]
 
-[ext_resource type="Texture2D" uid="uid://bbedcyfjvqjnw" path="res://assets/temp_sprite.png" id="1_at86d"]
 [ext_resource type="Script" path="res://game/player.gd" id="1_erqir"]
+[ext_resource type="Texture2D" uid="uid://rsg1ccihq8el" path="res://assets/player.png" id="2_3q1sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jorn"]
-size = Vector2(15.5, 16)
+size = Vector2(43, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d8wsg"]
+radius = 16.1245
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_erqir")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("1_at86d")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_3q1sa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.75, 0)
+position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_2jorn")
+
+[node name="PickableArea" type="Area2D" parent="."]
+position = Vector2(-13, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickableArea"]
+position = Vector2(48, 11)
+shape = SubResource("CircleShape2D_d8wsg")
+
+[connection signal="body_entered" from="PickableArea" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="PickableArea" to="." method="_on_pickable_area_body_exited"]
