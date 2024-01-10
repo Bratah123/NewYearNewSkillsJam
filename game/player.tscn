@@ -4,14 +4,15 @@
 [ext_resource type="Script" path="res://game/player.gd" id="1_erqir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jorn"]
-size = Vector2(21, 16)
+size = Vector2(15.5, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_erqir")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("1_at86d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 4)
+position = Vector2(-3.75, 0)
 shape = SubResource("RectangleShape2D_2jorn")

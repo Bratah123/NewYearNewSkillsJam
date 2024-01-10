@@ -9,3 +9,5 @@ func handle_input():
 func _physics_process(delta):
 	handle_input()
 	move_and_slide()
+	# Rotate towards mouse
+	look_at(get_global_mouse_position())
