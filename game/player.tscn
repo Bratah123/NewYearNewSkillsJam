@@ -64,7 +64,7 @@ _data = {
 size = Vector2(28, 42)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8wsg"]
-radius = 16.1245
+radius = 9.21954
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_erqir")
@@ -85,10 +85,9 @@ libraries = {
 shape = SubResource("RectangleShape2D_2jorn")
 
 [node name="PickableArea" type="Area2D" parent="."]
-position = Vector2(-15, -12)
+position = Vector2(24, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickableArea"]
-position = Vector2(48, 11)
 shape = SubResource("CircleShape2D_d8wsg")
 
 [node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
