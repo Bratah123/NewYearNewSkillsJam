@@ -53,3 +53,8 @@ func _physics_process(delta):
 
 func _play_pickup_sound():
 	$PickUpSound.play(.6)
+
+func release_current_held_item():
+	root_scene.queue_free(held_grabbable)
+	held_grabbable = null
+	is_holding = false

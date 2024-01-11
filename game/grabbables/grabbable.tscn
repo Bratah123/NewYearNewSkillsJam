@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://choeyphmk4ggm"]
+[gd_scene load_steps=5 format=3 uid="uid://choeyphmk4ggm"]
 
 [ext_resource type="Script" path="res://game/grabbables/grabbable.gd" id="1_ajand"]
 
@@ -9,6 +9,9 @@ bounce = 1.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_chwfx"]
 radius = 9.55249
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8ucu"]
+radius = 19.0
+
 [node name="Grabbable" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_0ftv0")
 script = ExtResource("1_ajand")
@@ -18,3 +21,8 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_chwfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+
+[node name="DetectableRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectableRange"]
+shape = SubResource("CircleShape2D_w8ucu")
