@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ce5mt8hsp5a"]
+
+[ext_resource type="Script" path="res://game/planting_area.gd" id="1_p7llv"]
+[ext_resource type="Texture2D" uid="uid://do21qj5jjt1m3" path="res://assets/tilled_soil_tile.png" id="2_2ta5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj5io"]
+
+[node name="PlantingArea" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_p7llv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jj5io")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2ta5h")
