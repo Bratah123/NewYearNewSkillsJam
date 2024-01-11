@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var move_speed : float = 200
 @onready var animations = $AnimationPlayer
 var is_holding = false
-const grabbable_object = preload("res://game/grabbables/grabbable.gd")
+const Grabbable = preload("res://game/grabbables/grabbable.gd")
 var grabbable_in_area
 var root_scene
 var held_grabbable
@@ -17,11 +17,15 @@ func _handle_pick_up():
 		var items_in_area = $PickableArea.get_overlapping_bodies()
 		if len(items_in_area) == 0:
 			return
-		# Pick up the first thing in the list
-		held_grabbable = items_in_area[0]
-		held_grabbable.reparent($PickableArea)
-		is_holding = true
-		_play_pickup_sound()
+		# Pick up the first VALID thing in the list
+		for item in items_in_area:
+			if item is Grabbable:
+				held_grabbable = item
+				break
+		if held_grabbable:
+			held_grabbable.reparent($PickableArea)
+			is_holding = true
+			_play_pickup_sound()
 	elif Input.is_action_just_pressed("click") and is_holding:
 		held_grabbable.reparent(root_scene)
 		held_grabbable = null
