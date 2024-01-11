@@ -18,6 +18,7 @@ func handle_input():
 		grabbable_in_area.reparent($PickableArea)
 		held_grabbable = grabbable_in_area
 		is_holding = true
+		_play_pickup_sound()
 	elif Input.is_action_just_pressed("click") and is_holding:
 		held_grabbable.reparent(root_scene)
 		held_grabbable = null
@@ -40,3 +41,6 @@ func _on_pickable_area_body_exited(body):
 	if body is grabbable_object:
 		grabbable_in_area = null
 		is_in_area = false
+
+func _play_pickup_sound():
+	$PickUpSound.play(.6)

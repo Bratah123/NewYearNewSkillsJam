@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmv15mn7wtyit"]
+[gd_scene load_steps=6 format=3 uid="uid://bmv15mn7wtyit"]
 
 [ext_resource type="Script" path="res://game/player.gd" id="1_erqir"]
 [ext_resource type="Texture2D" uid="uid://rsg1ccihq8el" path="res://assets/player.png" id="2_3q1sa"]
+[ext_resource type="AudioStream" uid="uid://cms4xkb7m0cs7" path="res://assets/sounds/pickup.wav" id="3_ga4rl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jorn"]
 size = Vector2(43, 30)
@@ -27,6 +28,9 @@ position = Vector2(-13, -12)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickableArea"]
 position = Vector2(48, 11)
 shape = SubResource("CircleShape2D_d8wsg")
+
+[node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ga4rl")
 
 [connection signal="body_entered" from="PickableArea" to="." method="_on_pickable_area_body_entered"]
 [connection signal="body_exited" from="PickableArea" to="." method="_on_pickable_area_body_exited"]
