@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 @export var move_speed : float = 200
 @onready var animations = $AnimationPlayer
+
 var is_holding = false
+var paused = false
 const Grabbable = preload("res://game/grabbables/grabbable.gd")
 var grabbable_in_area
 var root_scene

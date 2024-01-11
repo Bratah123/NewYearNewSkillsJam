@@ -1,0 +1,107 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0sdrwmc7iyj6"]
+
+[ext_resource type="Script" path="res://game/CanvasLayer.gd" id="1_4yq66"]
+[ext_resource type="FontFile" uid="uid://bojn4qknbfvir" path="res://assets/fonts/Minecraft.ttf" id="3_0lgae"]
+[ext_resource type="Texture2D" uid="uid://b24s786tkefm" path="res://assets/back_button.png" id="4_fsn1e"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_4yq66")
+
+[node name="PauseMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/CenterContainer"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Resume" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RESUME"
+
+[node name="Help" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "HELP"
+
+[node name="Restart" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RESTART"
+
+[node name="HelpMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HelpMenu"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+offset_left = 326.0
+offset_top = 174.0
+offset_right = 826.0
+offset_bottom = 474.0
+
+[node name="Label" type="Label" parent="HelpMenu"]
+layout_mode = 2
+offset_left = 327.0
+offset_top = 214.0
+offset_right = 827.0
+offset_bottom = 386.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_0lgae")
+theme_override_font_sizes/font_size = 32
+text = "W: UP
+A: DOWN
+S: LEFT
+D: RIGHT
+LEFT CLICK: INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="HelpMenu"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 532.0
+offset_top = 367.0
+offset_right = 564.0
+offset_bottom = 399.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture_normal = ExtResource("4_fsn1e")
+stretch_mode = 3
+
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HelpMenu/BackButton" to="." method="_on_back_button_pressed"]
