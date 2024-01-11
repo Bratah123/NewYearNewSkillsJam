@@ -190,6 +190,7 @@ sources/8 = SubResource("TileSetAtlasSource_gs8hq")
 sources/9 = SubResource("TileSetAtlasSource_kq84u")
 
 [node name="Game" type="Node2D"]
+process_mode = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, -2)

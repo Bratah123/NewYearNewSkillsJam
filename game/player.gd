@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var move_speed : float = 200
+@onready var animations = $AnimationPlayer
 var is_holding = false
 var is_in_area = false
 const grabbable_object = preload("res://game/grabbables/grabbable.gd")
@@ -22,10 +23,17 @@ func handle_input():
 		held_grabbable.reparent(root_scene)
 		held_grabbable = null
 		is_holding = false
+		
+func update_animation():
+	if velocity.length() == 0:
+		animations.stop()
+	else:
+		animations.play("walk")
 	
 func _physics_process(delta):
 	handle_input()
 	move_and_slide()
+	update_animation()
 	# Rotate towards mouse
 	look_at(get_global_mouse_position())
 
