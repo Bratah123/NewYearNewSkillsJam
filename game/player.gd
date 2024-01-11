@@ -52,7 +52,7 @@ func _physics_process(delta):
 	look_at(get_global_mouse_position())
 
 func _play_pickup_sound():
-	$PickUpSound.play(.6)
+	$PickUpSound.play(.1)
 
 func release_current_held_item():
 	root_scene.queue_free(held_grabbable)
