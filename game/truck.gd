@@ -25,7 +25,7 @@ func enter_scene():
 	tween.tween_property(truck_sprite, "position", Vector2(0, 0), 5).set_trans(Tween.TRANS_LINEAR)
 	generate_amount()
 	generate_crop()
-	deadline_timer.wait_time = rng.randi_range(3, 10)
+	deadline_timer.wait_time = rng.randi_range(15, 36)
 	deadline_timer.start()
 	
 	
