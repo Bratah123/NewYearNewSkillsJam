@@ -54,7 +54,7 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_ia4ro")
 
 [node name="TextBubbleSprite" type="Sprite2D" parent="."]
-position = Vector2(-26.1667, -11)
+position = Vector2(-23.3333, -10.1667)
 scale = Vector2(0.861979, 0.846354)
 texture = ExtResource("2_pf5iv")
 
