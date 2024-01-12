@@ -23,3 +23,8 @@ func _on_back_button_pressed():
 	pause_menu.visible = true
 	help_menu.visible = false
 
+
+
+func _on_main_menu_pressed():
+	game.pause_game()
+	get_tree().change_scene_to_file("res://game/main_menu.tscn")

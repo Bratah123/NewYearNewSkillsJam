@@ -53,6 +53,11 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "RESTART"
 
+[node name="MainMenu" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "MAIN MENU"
+
 [node name="HelpMenu" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -104,4 +109,5 @@ stretch_mode = 3
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="HelpMenu/BackButton" to="." method="_on_back_button_pressed"]
