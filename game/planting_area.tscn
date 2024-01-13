@@ -15,10 +15,16 @@ script = ExtResource("1_p7llv")
 [node name="PlantingArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlantingArea"]
-position = Vector2(0, 0.333334)
+position = Vector2(0, -2.98023e-08)
 shape = SubResource("RectangleShape2D_jj5io")
+
+[node name="PlantGrowingSprite" type="Sprite2D" parent="."]
+position = Vector2(5.33334, 4)
+scale = Vector2(1e-05, 1e-05)
 
 [node name="PlantingCropAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8dh7g")
+
+[node name="PlantGrowthTimer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="PlantingArea" to="." method="_on_planting_area_area_entered"]

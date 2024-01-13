@@ -1,3 +1,5 @@
 extends StaticBody2D
 
-var picked = false
+var planted = false
+@export var seed_type = 0
+@export var plantable = true

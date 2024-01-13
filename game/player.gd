@@ -55,6 +55,8 @@ func _play_pickup_sound():
 	$PickUpSound.play(.1)
 
 func release_current_held_item():
+	if held_grabbable == null:
+		return
 	held_grabbable.queue_free()
 	held_grabbable = null
 	is_holding = false
