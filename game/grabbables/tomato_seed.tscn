@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsi12pkqtnqaa"]
+
+[ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_yowpe"]
+[ext_resource type="Texture2D" uid="uid://dpx1jekmdnqwr" path="res://assets/tomato_seed.png" id="2_ssf8b"]
+
+[node name="Grabbable" instance=ExtResource("1_yowpe")]
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+texture = ExtResource("2_ssf8b")

@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var pause_menu = $PauseMenu
-@onready var help_menu = $HelpMenu
 @onready var shop_menu = $ShopMenu
 var paused = false
 
