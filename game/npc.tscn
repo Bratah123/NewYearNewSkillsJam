@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://6y1oolnn7fit"]
+
+[ext_resource type="Script" path="res://game/NPC.gd" id="1_la1y7"]
+[ext_resource type="Texture2D" uid="uid://du5hy2vb5tywu" path="res://assets/farmer.png" id="2_xhadn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkadc"]
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_la1y7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(804, 49.5)
+scale = Vector2(1.1875, 1.15625)
+texture = ExtResource("2_xhadn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(803, 52)
+shape = SubResource("CapsuleShape2D_kkadc")
