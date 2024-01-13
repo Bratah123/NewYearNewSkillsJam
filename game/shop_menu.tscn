@@ -25,6 +25,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 2.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -41,6 +45,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ShopMenu/CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 20.0
 theme_override_constants/separation = 9
 
 [node name="Carrot" type="Button" parent="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -69,13 +74,32 @@ layout_mode = 2
 text = "Corn"
 icon = ExtResource("6_qvcb6")
 
-[node name="Back" type="TextureButton" parent="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ButtonSpace" type="Button" parent="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 8
+size_flags_stretch_ratio = 4.73
+text = "Back"
+icon = ExtResource("7_iyf2h")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+
+[node name="Back" type="TextureButton" parent="ShopMenu"]
+clip_contents = true
+layout_mode = 2
+offset_left = 527.0
+offset_top = 435.0
+offset_right = 559.0
+offset_bottom = 467.0
+scale = Vector2(3, 3)
 texture_normal = ExtResource("7_iyf2h")
+stretch_mode = 3
 
 [connection signal="pressed" from="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Carrot" to="." method="_on_carrot_pressed"]
 [connection signal="pressed" from="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Radish" to="." method="_on_radish_pressed"]
 [connection signal="pressed" from="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Tomato" to="." method="_on_tomato_pressed"]
 [connection signal="pressed" from="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Potato" to="." method="_on_potato_pressed"]
 [connection signal="pressed" from="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Corn" to="." method="_on_corn_pressed"]
-[connection signal="pressed" from="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Back" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="ShopMenu/Back" to="." method="_on_texture_button_pressed"]

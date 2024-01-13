@@ -12,21 +12,17 @@ func _on_carrot_pressed():
 	var instance = seed_bag.instantiate()
 	add_child(instance)
 
-
 func _on_radish_pressed():
 	var instance = seed_bag.instantiate()
 	add_child(instance)
-
 
 func _on_tomato_pressed():
 	var instance = seed_bag.instantiate()
 	add_child(instance)
 
-
 func _on_potato_pressed():
 	var instance = seed_bag.instantiate()
 	add_child(instance)
-
 
 func _on_corn_pressed():
 	var instance = seed_bag.instantiate()
