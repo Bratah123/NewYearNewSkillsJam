@@ -81,9 +81,12 @@ one_shot = true
 
 [node name="ReturnTimer" type="Timer" parent="TruckSprite"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="DeliveryArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeliveryArea"]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_ia4ro")
 
 [connection signal="timeout" from="TruckSprite/DeadlineTimer" to="." method="_on_deadline_timer_timeout"]
 [connection signal="timeout" from="TruckSprite/ReturnTimer" to="." method="_on_return_timer_timeout"]
+[connection signal="area_entered" from="DeliveryArea" to="." method="_on_delivery_area_area_entered"]
