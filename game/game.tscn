@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://mpibfbaekv2f"]
+[gd_scene load_steps=36 format=3 uid="uid://mpibfbaekv2f"]
 
 [ext_resource type="Texture2D" uid="uid://bca0blonpdt7h" path="res://assets/soil_tile-1.png" id="1_7cpqq"]
 [ext_resource type="PackedScene" uid="uid://bonbjxcg5jnt1" path="res://game/truck.tscn" id="1_a5mrr"]
@@ -20,6 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://du5hy2vb5tywu" path="res://assets/farmer.png" id="19_h6hac"]
 [ext_resource type="PackedScene" uid="uid://2lfbl8weq2hp" path="res://game/shop_menu.tscn" id="19_ttdat"]
 [ext_resource type="Script" path="res://game/shop_button.gd" id="20_k3813"]
+[ext_resource type="PackedScene" uid="uid://dsi12pkqtnqaa" path="res://game/grabbables/tomato_seed.tscn" id="21_58pc4"]
+[ext_resource type="PackedScene" uid="uid://cyfgsck4qmajv" path="res://game/grabbables/radish_seed.tscn" id="22_wgk4d"]
+[ext_resource type="PackedScene" uid="uid://c4nvgxyp6yd14" path="res://game/grabbables/potato_seed.tscn" id="23_fdxe3"]
+[ext_resource type="PackedScene" uid="uid://bnq0tnyabii26" path="res://game/grabbables/corn_seed.tscn" id="24_05asf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcvnk"]
 texture = ExtResource("1_7cpqq")
@@ -227,16 +231,16 @@ position = Vector2(570, 315)
 position = Vector2(499, 393)
 
 [node name="CarrotSeed" parent="." instance=ExtResource("2_4xu0l")]
-position = Vector2(270, 486)
-
-[node name="CarrotSeed2" parent="." instance=ExtResource("2_4xu0l")]
-position = Vector2(317, 487)
-
-[node name="CarrotSeed3" parent="." instance=ExtResource("2_4xu0l")]
-position = Vector2(225, 487)
-
-[node name="CarrotSeed4" parent="." instance=ExtResource("2_4xu0l")]
 position = Vector2(182, 486)
+
+[node name="TomatoSeed" parent="." instance=ExtResource("21_58pc4")]
+position = Vector2(232, 488)
+
+[node name="RadishSeed" parent="." instance=ExtResource("22_wgk4d")]
+position = Vector2(280, 488)
+
+[node name="PotatoSeed" parent="." instance=ExtResource("23_fdxe3")]
+position = Vector2(328, 488)
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_wc5i5")]
 
@@ -250,5 +254,8 @@ offset_bottom = 636.0
 texture_normal = ExtResource("19_h6hac")
 stretch_mode = 0
 script = ExtResource("20_k3813")
+
+[node name="Grabbable" parent="." instance=ExtResource("24_05asf")]
+position = Vector2(376, 488)
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

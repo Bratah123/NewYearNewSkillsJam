@@ -7,17 +7,17 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_chwfx"]
-radius = 9.55249
+radius = 14.0159
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8ucu"]
-radius = 19.0
+radius = 24.0208
 
 [node name="Grabbable" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_0ftv0")
 script = ExtResource("1_ajand")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_chwfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
