@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://mpibfbaekv2f"]
+[gd_scene load_steps=32 format=3 uid="uid://mpibfbaekv2f"]
 
 [ext_resource type="Texture2D" uid="uid://bca0blonpdt7h" path="res://assets/soil_tile-1.png" id="1_7cpqq"]
 [ext_resource type="PackedScene" uid="uid://bonbjxcg5jnt1" path="res://game/truck.tscn" id="1_a5mrr"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c4g63sggw0yq2" path="res://assets/fence_bottom_left_tile.png" id="10_0bfxu"]
 [ext_resource type="PackedScene" uid="uid://c7ce5mt8hsp5a" path="res://game/planting_area.tscn" id="15_xdej2"]
 [ext_resource type="PackedScene" uid="uid://d0sdrwmc7iyj6" path="res://game/pause_menu.tscn" id="16_wc5i5"]
-[ext_resource type="PackedScene" uid="uid://6y1oolnn7fit" path="res://game/npc.tscn" id="18_bumsm"]
+[ext_resource type="Texture2D" uid="uid://du5hy2vb5tywu" path="res://assets/farmer.png" id="19_h6hac"]
+[ext_resource type="PackedScene" uid="uid://2lfbl8weq2hp" path="res://game/shop_menu.tscn" id="19_ttdat"]
+[ext_resource type="Script" path="res://game/shop_button.gd" id="20_k3813"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcvnk"]
 texture = ExtResource("1_7cpqq")
@@ -238,5 +240,15 @@ position = Vector2(182, 486)
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_wc5i5")]
 
-[node name="NPC" parent="." instance=ExtResource("18_bumsm")]
-position = Vector2(-720, 533)
+[node name="ShopMenu" parent="." instance=ExtResource("19_ttdat")]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 16.0
+offset_top = 581.0
+offset_right = 65.0
+offset_bottom = 636.0
+texture_normal = ExtResource("19_h6hac")
+stretch_mode = 0
+script = ExtResource("20_k3813")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

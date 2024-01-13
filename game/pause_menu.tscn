@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b24s786tkefm" path="res://assets/back_button.png" id="4_fsn1e"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_4yq66")
 
 [node name="PauseMenu" type="Control" parent="."]

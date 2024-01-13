@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var pause_menu = $PauseMenu
 @onready var help_menu = $HelpMenu
+@onready var shop_menu = $ShopMenu
 var paused = false
 
 func _process(delta):
@@ -17,3 +18,7 @@ func pause_game():
 		Engine.time_scale = 0
 		
 	paused = !paused	
+
+
+func _on_texture_button_pressed():
+	shop_menu.visible = true

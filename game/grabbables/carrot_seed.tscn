@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1xtp8yecmex5"]
 
 [ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_vxcfy"]
-[ext_resource type="Texture2D" uid="uid://bswamt4d5en7h" path="res://assets/seed_bag.png" id="2_c6kot"]
+[ext_resource type="Texture2D" uid="uid://bictoqlloc26t" path="res://assets/seed_bag.png" id="2_c6kot"]
 
 [node name="Grabbable" instance=ExtResource("1_vxcfy")]
 
