@@ -21,6 +21,10 @@ func _on_planting_area_area_entered(area):
 	# If a grabbable is within our range, plant the plant
 	if parent_node is Grabbable and not planted:
 		print("Grabbable has entered the zone")
+		planted = true
+		# Grab the player holding this item
+		var player = parent_node.get_parent().get_parent()
+		player.release_current_held_item()
 		_play_planting_sound()
 		
 func _play_planting_sound():

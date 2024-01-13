@@ -17,7 +17,7 @@ func pause_game():
 		pause_menu.show()
 		Engine.time_scale = 0
 		
-	paused = !paused	
+	paused = !paused
 
 
 func _on_texture_button_pressed():
