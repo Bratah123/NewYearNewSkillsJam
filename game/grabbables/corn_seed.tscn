@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_l0erp"]
 [ext_resource type="Texture2D" uid="uid://cgduih10pifp0" path="res://assets/corn_seed.png" id="2_a3qsp"]
 
-[node name="Grabbable" instance=ExtResource("1_l0erp")]
+[node name="CornSeed" instance=ExtResource("1_l0erp")]
+seed_type = 2
+plantable = true
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
 texture = ExtResource("2_a3qsp")

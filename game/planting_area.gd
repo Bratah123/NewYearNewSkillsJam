@@ -4,7 +4,7 @@ extends Sprite2D
 var planted = false
 var plant_tween
 const Grabbable = preload("res://game/grabbables/grabbable.gd")
-const crops_name = ["corn.png", "carrot.png", "potato.png", "radish.png", "tomato.png"]
+const crops_name = ["carrot.png", "corn.png", "potato.png", "radish.png", "tomato.png"]
 const plant_growth_time = 5 # In seconds
 const assets_folder = "res://assets/"
 

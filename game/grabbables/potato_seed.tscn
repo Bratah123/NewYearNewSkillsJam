@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_iahfi"]
 [ext_resource type="Texture2D" uid="uid://bm3m5pyh8fxpd" path="res://assets/potato_seed.png" id="2_qy3qq"]
 
-[node name="Grabbable" instance=ExtResource("1_iahfi")]
+[node name="PotatoSeed" instance=ExtResource("1_iahfi")]
+seed_type = 3
+plantable = true
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
 texture = ExtResource("2_qy3qq")

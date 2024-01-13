@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3qywdgp3cdfu"]
+
+[ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_pbv5c"]
+[ext_resource type="Texture2D" uid="uid://c0gih2fn2onhe" path="res://assets/radish.png" id="2_ac4np"]
+
+[node name="Radish" instance=ExtResource("1_pbv5c")]
+seed_type = 4
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+texture = ExtResource("2_ac4np")

@@ -233,16 +233,19 @@ position = Vector2(570, 315)
 position = Vector2(499, 393)
 
 [node name="CarrotSeed" parent="." instance=ExtResource("2_4xu0l")]
-position = Vector2(182, 486)
+position = Vector2(222, 480)
 
-[node name="TomatoSeed" parent="." instance=ExtResource("21_58pc4")]
-position = Vector2(232, 488)
-
-[node name="RadishSeed" parent="." instance=ExtResource("22_wgk4d")]
-position = Vector2(280, 488)
+[node name="CornSeed" parent="." instance=ExtResource("24_05asf")]
+position = Vector2(176, 482)
 
 [node name="PotatoSeed" parent="." instance=ExtResource("23_fdxe3")]
-position = Vector2(328, 488)
+position = Vector2(272, 482)
+
+[node name="RadishSeed" parent="." instance=ExtResource("22_wgk4d")]
+position = Vector2(320, 482)
+
+[node name="TomatoSeed" parent="." instance=ExtResource("21_58pc4")]
+position = Vector2(368, 482)
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_wc5i5")]
 
@@ -256,8 +259,5 @@ offset_bottom = 636.0
 texture_normal = ExtResource("19_h6hac")
 stretch_mode = 0
 script = ExtResource("20_k3813")
-
-[node name="Grabbable" parent="." instance=ExtResource("24_05asf")]
-position = Vector2(376, 488)
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
