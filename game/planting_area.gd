@@ -7,6 +7,11 @@ const Grabbable = preload("res://game/grabbables/grabbable.gd")
 const crops_name = ["carrot.png", "corn.png", "potato.png", "radish.png", "tomato.png"]
 const plant_growth_time = 5 # In seconds
 const assets_folder = "res://assets/"
+const carrot_bag = preload("res://game/grabbables/carrot_seed.tscn")
+const corn_bag = preload("res://game/grabbables/corn_seed.tscn")
+const potato_bag = preload("res://game/grabbables/potato_seed.tscn")
+const radish_bag = preload("res://game/grabbables/radish_seed.tscn")
+const tomato_bag = preload("res://game/grabbables/tomato_seed.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +38,7 @@ func _assign_sprite_from_seed_type(seed_type):
 func _reset_plant_area():
 	plant_tween.kill()
 	planted = false
+	# Spawn in a real vegetable in it's place
 
 
 """
