@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7ce5mt8hsp5a"]
 
+[ext_resource type="Texture2D" uid="uid://bgki62uta6fps" path="res://assets/soil.png" id="1_asm6i"]
 [ext_resource type="Script" path="res://game/planting_area.gd" id="1_p7llv"]
-[ext_resource type="Texture2D" uid="uid://do21qj5jjt1m3" path="res://assets/tilled_soil_tile.png" id="2_2ta5h"]
 [ext_resource type="AudioStream" uid="uid://gaftrba5sr0d" path="res://assets/sounds/plant_crop.wav" id="3_8dh7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj5io"]
@@ -9,7 +9,7 @@ size = Vector2(32, 32.6667)
 
 [node name="PlantingArea" type="Sprite2D"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_2ta5h")
+texture = ExtResource("1_asm6i")
 script = ExtResource("1_p7llv")
 
 [node name="PlantingArea" type="Area2D" parent="."]
