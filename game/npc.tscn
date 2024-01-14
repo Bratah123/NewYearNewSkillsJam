@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://6y1oolnn7fit"]
 
 [ext_resource type="Script" path="res://game/NPC.gd" id="1_la1y7"]
-[ext_resource type="Texture2D" uid="uid://du5hy2vb5tywu" path="res://assets/farmer.png" id="2_xhadn"]
+[ext_resource type="Texture2D" uid="uid://bno73tnacntij" path="res://assets/farmers_market.png" id="2_gxern"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkadc"]
 radius = 14.0
@@ -13,7 +13,7 @@ script = ExtResource("1_la1y7")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4, 6)
 scale = Vector2(2.03125, 2.375)
-texture = ExtResource("2_xhadn")
+texture = ExtResource("2_gxern")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 13)

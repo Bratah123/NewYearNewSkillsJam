@@ -42,4 +42,4 @@ func _on_texture_button_pressed():
 	print("back button")
 
 func _set_position(seed_bag):
-	seed_bag.position = Vector2(90, 610)
+	seed_bag.position = Vector2(170, 575)
