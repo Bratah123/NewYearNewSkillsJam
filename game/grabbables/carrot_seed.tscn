@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgn0qrfgumhql" path="res://assets/carrot_seed.png" id="2_a805m"]
 
 [node name="Grabbable" instance=ExtResource("1_vxcfy")]
+plantable = true
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
 position = Vector2(1, -0.5)
