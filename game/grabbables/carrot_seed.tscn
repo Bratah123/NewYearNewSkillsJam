@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1xtp8yecmex5"]
 
 [ext_resource type="PackedScene" uid="uid://choeyphmk4ggm" path="res://game/grabbables/grabbable.tscn" id="1_vxcfy"]
-[ext_resource type="Texture2D" uid="uid://bictoqlloc26t" path="res://assets/seed_bag.png" id="2_c6kot"]
+[ext_resource type="Texture2D" uid="uid://dgn0qrfgumhql" path="res://assets/carrot_seed.png" id="2_6xq8f"]
 
 [node name="Grabbable" instance=ExtResource("1_vxcfy")]
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
 position = Vector2(1, -0.5)
-texture = ExtResource("2_c6kot")
+texture = ExtResource("2_6xq8f")
