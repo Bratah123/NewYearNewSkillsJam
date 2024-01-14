@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://mpibfbaekv2f"]
+[gd_scene load_steps=39 format=3 uid="uid://mpibfbaekv2f"]
 
 [ext_resource type="Texture2D" uid="uid://bca0blonpdt7h" path="res://assets/soil_tile-1.png" id="1_7cpqq"]
 [ext_resource type="PackedScene" uid="uid://bonbjxcg5jnt1" path="res://game/truck.tscn" id="1_a5mrr"]
@@ -25,11 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://bno73tnacntij" path="res://assets/farmers_market.png" id="23_bw2hk"]
 [ext_resource type="PackedScene" uid="uid://c4nvgxyp6yd14" path="res://game/grabbables/potato_seed.tscn" id="23_fdxe3"]
 [ext_resource type="PackedScene" uid="uid://bnq0tnyabii26" path="res://game/grabbables/corn_seed.tscn" id="24_05asf"]
-[ext_resource type="PackedScene" uid="uid://cgjfbfijnvo48" path="res://game/grabbables/corn.tscn" id="25_cn0m7"]
-[ext_resource type="PackedScene" uid="uid://c4d033lexp3rt" path="res://game/grabbables/carrot.tscn" id="26_mkckd"]
-[ext_resource type="PackedScene" uid="uid://dgu16etsa4mfw" path="res://game/grabbables/potato.tscn" id="27_uk06g"]
-[ext_resource type="PackedScene" uid="uid://c3qywdgp3cdfu" path="res://game/grabbables/radish.tscn" id="28_lpn1w"]
-[ext_resource type="PackedScene" uid="uid://dgak7ejaacsbc" path="res://game/grabbables/tomato.tscn" id="29_ny3y8"]
 [ext_resource type="PackedScene" uid="uid://b0utcfpku10i1" path="res://game/score.tscn" id="30_nbhxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcvnk"]
@@ -289,21 +284,6 @@ offset_bottom = 645.0
 texture_normal = ExtResource("23_bw2hk")
 stretch_mode = 0
 script = ExtResource("20_k3813")
-
-[node name="Corn" parent="." instance=ExtResource("25_cn0m7")]
-position = Vector2(528, 480)
-
-[node name="Carrot" parent="." instance=ExtResource("26_mkckd")]
-position = Vector2(568, 480)
-
-[node name="Potato" parent="." instance=ExtResource("27_uk06g")]
-position = Vector2(608, 480)
-
-[node name="Radish" parent="." instance=ExtResource("28_lpn1w")]
-position = Vector2(656, 480)
-
-[node name="Tomato" parent="." instance=ExtResource("29_ny3y8")]
-position = Vector2(704, 480)
 
 [node name="HUD" parent="." instance=ExtResource("30_nbhxi")]
 
