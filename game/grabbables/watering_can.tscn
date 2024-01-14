@@ -19,7 +19,6 @@ radius = 13.0
 height = 38.0
 
 [node name="WateringCan" instance=ExtResource("1_g1yxk")]
-seed_type = 0
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CapsuleShape2D_jicr4")

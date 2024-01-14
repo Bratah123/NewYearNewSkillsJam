@@ -38,6 +38,7 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ShopMenu/CenterContainer/PanelContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -90,9 +91,9 @@ icon_alignment = 1
 clip_contents = true
 layout_mode = 2
 offset_left = 527.0
-offset_top = 435.0
+offset_top = 436.0
 offset_right = 559.0
-offset_bottom = 467.0
+offset_bottom = 468.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("7_iyf2h")
 stretch_mode = 3
