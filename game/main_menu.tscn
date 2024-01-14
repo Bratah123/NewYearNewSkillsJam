@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi278ukanovvd"]
+[gd_scene load_steps=18 format=3 uid="uid://bi278ukanovvd"]
 
 [ext_resource type="Script" path="res://game/main_menu.gd" id="1_i05p4"]
 [ext_resource type="Texture2D" uid="uid://btv0nxyidofey" path="res://assets/start_button.png" id="2_c6ugy"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://do21qj5jjt1m3" path="res://assets/tilled_soil_tile.png" id="4_etd5b"]
 [ext_resource type="Texture2D" uid="uid://bictoqlloc26t" path="res://assets/seed_bag.png" id="5_12tn0"]
 [ext_resource type="Texture2D" uid="uid://dna2o8ed4va5d" path="res://assets/main_menu_bg.png" id="6_ex6no"]
+[ext_resource type="Texture2D" uid="uid://d2s2jf2nomsij" path="res://assets/start_button_click.png" id="8_g1kmu"]
+[ext_resource type="Texture2D" uid="uid://dfnvk3hf8f1cl" path="res://assets/start_button_hover.png" id="9_1hp6c"]
+[ext_resource type="Texture2D" uid="uid://dc2qmagp7odin" path="res://assets/help_button_click.png" id="11_g4la7"]
+[ext_resource type="Texture2D" uid="uid://c1jjxdx6wshns" path="res://assets/help_button_hover.png" id="12_07pgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7lehl"]
 texture = ExtResource("2_lag25")
@@ -85,6 +89,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
 texture_normal = ExtResource("2_c6ugy")
+texture_pressed = ExtResource("8_g1kmu")
+texture_hover = ExtResource("9_1hp6c")
 ignore_texture_size = true
 stretch_mode = 3
 
@@ -97,6 +103,8 @@ offset_right = 214.0
 offset_bottom = 213.0
 scale = Vector2(4, 4)
 texture_normal = ExtResource("3_sq0qy")
+texture_pressed = ExtResource("11_g4la7")
+texture_hover = ExtResource("12_07pgx")
 ignore_texture_size = true
 stretch_mode = 3
 
