@@ -58,7 +58,7 @@ func _generate_amount():
 func _generate_crop():
 	var random_index = rng.randi_range(0, crops_png.size() - 1)
 	var random_crop = crops_png[random_index]
-	crop = random_crop.replace(".png", "").capitalize()
+	crop = random_index + 1
 	print("NEEDED: ", crop)
 	texture_rect.texture = load(assets_folder + random_crop)
 
@@ -81,13 +81,13 @@ func _on_delivery_area_area_entered(area):
 	if parent_node == player:
 		return
 	# If a crop is within our range, submit the order
-	if parent_node is Grabbable and not parent_node.plantable and crop == parent_node.name:
+	if parent_node is Grabbable and not parent_node.plantable and crop == parent_node.seed_type and not delivered:
 		delivered = true
 		truck_sprite.texture = truck_complete
 		score_count.increase_score()
 		player.release_current_held_item()
 		_leave_scene()
-	elif parent_node is Grabbable and not parent_node.plantable and crop != parent_node.name:
+	elif parent_node is Grabbable and not parent_node.plantable and crop != parent_node.seed_type:
 		delivered = false
 		score_count.decrease_score(10)
 		player.release_current_held_item()

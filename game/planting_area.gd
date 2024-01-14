@@ -47,7 +47,6 @@ func _reset_plant_area(seed_type):
 	var vegetable_object = vegetable_to_spawn.instantiate()
 	vegetable_object.position = $".".position
 	vegetable_object.scale = Vector2(1.5, 1.5)
-	vegetable_object.seed_type = seed_type
 	get_parent().add_child(vegetable_object)
 
 
