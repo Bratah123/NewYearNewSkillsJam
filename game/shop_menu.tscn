@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b24s786tkefm" path="res://assets/back_button.png" id="7_iyf2h"]
 
 [node name="ShopMenuCanvas" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_xmjc0")
 
 [node name="ShopMenu" type="Control" parent="."]
