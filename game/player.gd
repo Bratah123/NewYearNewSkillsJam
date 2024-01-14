@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 200
+@export var move_speed : float = 265
 @onready var animations = $AnimationPlayer
 
 var is_holding = false
