@@ -7,11 +7,12 @@ const Grabbable = preload("res://game/grabbables/grabbable.gd")
 const crops_name = ["carrot.png", "corn.png", "potato.png", "radish.png", "tomato.png"]
 const plant_growth_time = 5 # In seconds
 const assets_folder = "res://assets/"
-const carrot_bag = preload("res://game/grabbables/carrot_seed.tscn")
-const corn_bag = preload("res://game/grabbables/corn_seed.tscn")
-const potato_bag = preload("res://game/grabbables/potato_seed.tscn")
-const radish_bag = preload("res://game/grabbables/radish_seed.tscn")
-const tomato_bag = preload("res://game/grabbables/tomato_seed.tscn")
+const carrot_bag = preload("res://game/grabbables/carrot.tscn")
+const corn_bag = preload("res://game/grabbables/corn.tscn")
+const potato_bag = preload("res://game/grabbables/potato.tscn")
+const radish_bag = preload("res://game/grabbables/radish.tscn")
+const tomato_bag = preload("res://game/grabbables/tomato.tscn")
+const seed_objects = [carrot_bag, corn_bag, potato_bag, radish_bag, tomato_bag]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,22 +24,30 @@ func _process(delta):
 	pass
 
 
-func _start_plant_growth():
+func _start_plant_growth(seed_type):
 	plant_tween = create_tween()
 	plant_tween.tween_property(plant_growing_sprite, "scale", Vector2(1.5, 1.5), plant_growth_time)
 	plant_tween.set_trans(Tween.TRANS_LINEAR)
-	plant_tween.tween_callback(_reset_plant_area)
+	plant_tween.tween_callback(_reset_plant_area.bind(seed_type))
 	
 	
 func _assign_sprite_from_seed_type(seed_type):
 	var crop_sprite = crops_name[seed_type-1] # Seed type starts from 1
 	plant_growing_sprite.texture = load(assets_folder + crop_sprite)
+	_start_plant_growth(seed_type)
 
 
-func _reset_plant_area():
+func _reset_plant_area(seed_type):
 	plant_tween.kill()
+	plant_growing_sprite.scale = Vector2(0, 0)
+	plant_growing_sprite.texture = null
 	planted = false
 	# Spawn in a real vegetable in it's place
+	var vegetable_to_spawn = seed_objects[seed_type-1]
+	var vegetable_object = vegetable_to_spawn.instantiate()
+	vegetable_object.position = $".".position
+	vegetable_object.scale = Vector2(1.5, 1.5)
+	get_parent().add_child(vegetable_object)
 
 
 """
@@ -58,7 +67,6 @@ func _on_planting_area_area_entered(area):
 		var player = parent_node.get_parent().get_parent()
 		player.release_current_held_item()
 		_assign_sprite_from_seed_type(parent_node.seed_type)
-		_start_plant_growth()
 		_play_planting_sound()
 		
 		
