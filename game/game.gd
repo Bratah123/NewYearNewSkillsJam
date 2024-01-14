@@ -8,19 +8,19 @@ extends Node2D
 @onready var heart_sprite = preload("res://game/lives.tscn")
 var lives = []
 var paused = false
-var x_position = 40
+var x_position = 45
 
 
 func _ready():
 	for index in range(5):
 		_add_heart(x_position)
-		x_position += 40
+		x_position += 50
 		
 
 func _add_heart(x_position):
 	var instance = heart_sprite.instantiate()
 	for index in range(5):
-		instance.position = Vector2(x_position, 35)
+		instance.position = Vector2(x_position, 40)
 		add_child(instance)
 		get_parent().add_child(instance)
 	lives.append(instance)
