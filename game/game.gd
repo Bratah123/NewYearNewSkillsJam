@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var pause_menu = $PauseMenu
-@onready var shop_menu = $ShopMenu
+@onready var shop_menu = $ShopMenuCanvas
 var paused = false
 
 
@@ -19,6 +19,6 @@ func pause_game():
 		
 	paused = !paused
 
-
-func _on_texture_button_pressed():
+func _on_shop_button_pressed():
 	shop_menu.visible = true
+	print("shop button pressed")

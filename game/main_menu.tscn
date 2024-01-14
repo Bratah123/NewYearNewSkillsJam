@@ -114,6 +114,6 @@ texture_normal = ExtResource("3_sq0qy")
 ignore_texture_size = true
 stretch_mode = 3
 
-[connection signal="pressed" from="Control/Start" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Start" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Control/Help" to="." method="_on_help_pressed"]
