@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c44mek7sa4pwq"]
+
+[ext_resource type="Texture2D" uid="uid://v4huds38e6qg" path="res://assets/heart.png" id="1_soce7"]
+[ext_resource type="Script" path="res://game/lives.gd" id="2_hqul0"]
+
+[node name="HeartSprite" type="Sprite2D"]
+position = Vector2(43.2, 35.2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_soce7")
+script = ExtResource("2_hqul0")
+
+[connection signal="hidden" from="." to="." method="_on_hidden"]

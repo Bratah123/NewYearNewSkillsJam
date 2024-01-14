@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://2lfbl8weq2hp"]
 
 [ext_resource type="Script" path="res://game/shop_menu.gd" id="1_xmjc0"]
-[ext_resource type="Texture2D" uid="uid://ch2g3ypv6u0g8" path="res://assets/Carrot.png" id="2_82wkl"]
+[ext_resource type="Texture2D" uid="uid://ch2g3ypv6u0g8" path="res://assets/carrot.png" id="2_82wkl"]
 [ext_resource type="Texture2D" uid="uid://vg5dujiq6nsm" path="res://assets/tomato.png" id="3_6qqcw"]
-[ext_resource type="Texture2D" uid="uid://c0gih2fn2onhe" path="res://assets/Radish.png" id="4_dct8k"]
-[ext_resource type="Texture2D" uid="uid://c6orydwti0xgt" path="res://assets/Potato.png" id="5_bns0w"]
-[ext_resource type="Texture2D" uid="uid://cenlemh6ss56r" path="res://assets/Corn.png" id="6_qvcb6"]
+[ext_resource type="Texture2D" uid="uid://c0gih2fn2onhe" path="res://assets/radish.png" id="4_dct8k"]
+[ext_resource type="Texture2D" uid="uid://c6orydwti0xgt" path="res://assets/potato.png" id="5_bns0w"]
+[ext_resource type="Texture2D" uid="uid://cenlemh6ss56r" path="res://assets/corn.png" id="6_qvcb6"]
 [ext_resource type="Texture2D" uid="uid://b24s786tkefm" path="res://assets/back_button.png" id="7_iyf2h"]
 [ext_resource type="AudioStream" uid="uid://ce02wp4qe5i3k" path="res://assets/sounds/bag_spawn.wav" id="8_60nf2"]
 

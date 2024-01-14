@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://mpibfbaekv2f"]
+[gd_scene load_steps=45 format=3 uid="uid://mpibfbaekv2f"]
 
 [ext_resource type="Texture2D" uid="uid://bca0blonpdt7h" path="res://assets/soil_tile-1.png" id="1_7cpqq"]
 [ext_resource type="PackedScene" uid="uid://bonbjxcg5jnt1" path="res://game/truck.tscn" id="1_a5mrr"]
@@ -18,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://c4g63sggw0yq2" path="res://assets/fence_bottom_left_tile.png" id="10_0bfxu"]
 [ext_resource type="PackedScene" uid="uid://c7ce5mt8hsp5a" path="res://game/planting_area.tscn" id="15_xdej2"]
 [ext_resource type="PackedScene" uid="uid://d0sdrwmc7iyj6" path="res://game/pause_menu.tscn" id="16_wc5i5"]
+[ext_resource type="Texture2D" uid="uid://du5hy2vb5tywu" path="res://assets/farmer.png" id="19_h6hac"]
 [ext_resource type="PackedScene" uid="uid://2lfbl8weq2hp" path="res://game/shop_menu.tscn" id="19_ttdat"]
 [ext_resource type="Script" path="res://game/shop_button.gd" id="20_k3813"]
 [ext_resource type="PackedScene" uid="uid://dsi12pkqtnqaa" path="res://game/grabbables/tomato_seed.tscn" id="21_58pc4"]
 [ext_resource type="PackedScene" uid="uid://cyfgsck4qmajv" path="res://game/grabbables/radish_seed.tscn" id="22_wgk4d"]
-[ext_resource type="Texture2D" uid="uid://bno73tnacntij" path="res://assets/farmers_market.png" id="23_bw2hk"]
 [ext_resource type="PackedScene" uid="uid://c4nvgxyp6yd14" path="res://game/grabbables/potato_seed.tscn" id="23_fdxe3"]
 [ext_resource type="PackedScene" uid="uid://bnq0tnyabii26" path="res://game/grabbables/corn_seed.tscn" id="24_05asf"]
 [ext_resource type="PackedScene" uid="uid://cgjfbfijnvo48" path="res://game/grabbables/corn.tscn" id="25_cn0m7"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c3qywdgp3cdfu" path="res://game/grabbables/radish.tscn" id="28_lpn1w"]
 [ext_resource type="PackedScene" uid="uid://dgak7ejaacsbc" path="res://game/grabbables/tomato.tscn" id="29_ny3y8"]
 [ext_resource type="PackedScene" uid="uid://b0utcfpku10i1" path="res://game/score.tscn" id="30_nbhxi"]
+[ext_resource type="PackedScene" uid="uid://c44mek7sa4pwq" path="res://game/lives.tscn" id="32_wktee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcvnk"]
 texture = ExtResource("1_7cpqq")
@@ -283,10 +284,10 @@ position = Vector2(368, 482)
 
 [node name="ShopButton" type="TextureButton" parent="."]
 offset_left = 16.0
-offset_top = 516.0
-offset_right = 144.0
-offset_bottom = 645.0
-texture_normal = ExtResource("23_bw2hk")
+offset_top = 581.0
+offset_right = 65.0
+offset_bottom = 636.0
+texture_normal = ExtResource("19_h6hac")
 stretch_mode = 0
 script = ExtResource("20_k3813")
 
@@ -309,7 +310,19 @@ position = Vector2(704, 480)
 
 [node name="ShopMenuCanvas" parent="." instance=ExtResource("19_ttdat")]
 
-[connection signal="delivery_fail" from="Truck" to="." method="_on_truck_delivery_fail"]
-[connection signal="delivery_fail" from="Truck2" to="." method="_on_truck_2_delivery_fail"]
-[connection signal="delivery_fail" from="Truck3" to="." method="_on_truck_3_delivery_fail"]
+[node name="HeartSprite1" parent="." instance=ExtResource("32_wktee")]
+position = Vector2(40, 40)
+
+[node name="HeartSprite2" parent="." instance=ExtResource("32_wktee")]
+position = Vector2(88, 40)
+
+[node name="HeartSprite3" parent="." instance=ExtResource("32_wktee")]
+position = Vector2(232, 40)
+
+[node name="HeartSprite4" parent="." instance=ExtResource("32_wktee")]
+position = Vector2(184, 40)
+
+[node name="HeartSprite5" parent="." instance=ExtResource("32_wktee")]
+position = Vector2(136, 40)
+
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]

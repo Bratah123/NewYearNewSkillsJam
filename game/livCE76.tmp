@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://c44mek7sa4pwq"]
+
+[ext_resource type="Texture2D" uid="uid://v4huds38e6qg" path="res://assets/heart.png" id="1_soce7"]
+[ext_resource type="Script" path="res://game/lives.gd" id="2_hqul0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HeartSprite" type="Sprite2D" parent="."]
+position = Vector2(43.2, 35.2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_soce7")
+script = ExtResource("2_hqul0")
+
+[node name="HeartSprite2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(91.2, 35.2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_soce7")
+script = ExtResource("2_hqul0")
+
+[node name="HeartSprite3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(139.2, 35.2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_soce7")
+script = ExtResource("2_hqul0")
+
+[node name="HeartSprite4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(187.2, 35.2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_soce7")
+script = ExtResource("2_hqul0")
+
+[node name="HeartSprite5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(232, 35.2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_soce7")
+script = ExtResource("2_hqul0")
+
+[connection signal="hidden" from="HeartSprite" to="HeartSprite" method="_on_hidden"]
+[connection signal="hidden" from="HeartSprite2" to="HeartSprite2" method="_on_hidden"]
+[connection signal="hidden" from="HeartSprite3" to="HeartSprite3" method="_on_hidden"]
+[connection signal="hidden" from="HeartSprite4" to="HeartSprite4" method="_on_hidden"]
+[connection signal="hidden" from="HeartSprite5" to="HeartSprite5" method="_on_hidden"]
