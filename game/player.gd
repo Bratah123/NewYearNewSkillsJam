@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 265
+@export var move_speed : float = 320
 @onready var animations = $AnimationPlayer
-
+@onready var player = $"."
 var is_holding = false
 var paused = false
 const Grabbable = preload("res://game/grabbables/grabbable.gd")
@@ -28,7 +28,7 @@ func _handle_pick_up():
 			held_grabbable.reparent($PickableArea)
 			is_holding = true
 			_play_pickup_sound()
-			var offset = Vector2(5, -5)
+			var offset = Vector2(7.0, -7.0)
 			held_grabbable.position += offset
 	elif Input.is_action_just_pressed("click") and is_holding:
 		held_grabbable.reparent(root_scene)

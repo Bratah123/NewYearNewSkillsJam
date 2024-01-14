@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b24s786tkefm" path="res://assets/back_button.png" id="7_iyf2h"]
 
 [node name="ShopMenuCanvas" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_xmjc0")
 
 [node name="ShopMenu" type="Control" parent="."]
@@ -90,12 +89,13 @@ icon_alignment = 1
 [node name="Back" type="TextureButton" parent="ShopMenu"]
 clip_contents = true
 layout_mode = 2
-offset_left = 527.0
-offset_top = 436.0
-offset_right = 559.0
-offset_bottom = 468.0
+offset_left = 537.0
+offset_top = 462.0
+offset_right = 565.0
+offset_bottom = 477.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("7_iyf2h")
+ignore_texture_size = true
 stretch_mode = 3
 
 [connection signal="pressed" from="ShopMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Carrot" to="." method="_on_carrot_pressed"]
