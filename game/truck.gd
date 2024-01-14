@@ -15,6 +15,7 @@ var tween
 const Grabbable = preload("res://game/grabbables/grabbable.gd")
 const crops_name = ["carrot.png", "corn.png", "potato.png", "radish.png", "tomato.png"]
 const truck_complete = preload("res://assets/truck_order_complete.png")
+const truck_incomplete = preload("res://assets/truck_order.png")
 var delivered = false
 
 
@@ -29,9 +30,10 @@ func _enter_scene():
 		tween.kill()
 	tween = create_tween()
 	tween.tween_property(truck_sprite, "position", Vector2(0, 0), 5).set_trans(Tween.TRANS_LINEAR)
+	truck_sprite.texture = truck_incomplete
 	_generate_amount()
 	_generate_crop()
-	deadline_timer.wait_time = rng.randi_range(24, 48)
+	deadline_timer.wait_time = rng.randi_range(36, 58)
 	deadline_timer.start()
 	
 	
@@ -41,7 +43,7 @@ func _leave_scene():
 		tween.kill()
 	tween = create_tween()
 	tween.tween_property(truck_sprite, "position", Vector2(200, 0), 3).set_trans(Tween.TRANS_LINEAR)
-	return_timer.wait_time = rng.randi_range(3, 6)
+	return_timer.wait_time = rng.randi_range(3, 10)
 	return_timer.start()
 
 

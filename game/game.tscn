@@ -21,16 +21,16 @@
 [ext_resource type="Texture2D" uid="uid://du5hy2vb5tywu" path="res://assets/farmer.png" id="19_h6hac"]
 [ext_resource type="PackedScene" uid="uid://2lfbl8weq2hp" path="res://game/shop_menu.tscn" id="19_ttdat"]
 [ext_resource type="Script" path="res://game/shop_button.gd" id="20_k3813"]
-[ext_resource type="PackedScene" path="res://game/grabbables/tomato_seed.tscn" id="21_58pc4"]
-[ext_resource type="PackedScene" path="res://game/grabbables/radish_seed.tscn" id="22_wgk4d"]
-[ext_resource type="PackedScene" path="res://game/grabbables/potato_seed.tscn" id="23_fdxe3"]
-[ext_resource type="PackedScene" path="res://game/grabbables/corn_seed.tscn" id="24_05asf"]
-[ext_resource type="PackedScene" path="res://game/grabbables/corn.tscn" id="25_cn0m7"]
-[ext_resource type="PackedScene" path="res://game/grabbables/carrot.tscn" id="26_mkckd"]
-[ext_resource type="PackedScene" path="res://game/grabbables/potato.tscn" id="27_uk06g"]
-[ext_resource type="PackedScene" path="res://game/grabbables/radish.tscn" id="28_lpn1w"]
-[ext_resource type="PackedScene" path="res://game/grabbables/tomato.tscn" id="29_ny3y8"]
-[ext_resource type="PackedScene" path="res://game/score.tscn" id="30_nbhxi"]
+[ext_resource type="PackedScene" uid="uid://dsi12pkqtnqaa" path="res://game/grabbables/tomato_seed.tscn" id="21_58pc4"]
+[ext_resource type="PackedScene" uid="uid://cyfgsck4qmajv" path="res://game/grabbables/radish_seed.tscn" id="22_wgk4d"]
+[ext_resource type="PackedScene" uid="uid://c4nvgxyp6yd14" path="res://game/grabbables/potato_seed.tscn" id="23_fdxe3"]
+[ext_resource type="PackedScene" uid="uid://bnq0tnyabii26" path="res://game/grabbables/corn_seed.tscn" id="24_05asf"]
+[ext_resource type="PackedScene" uid="uid://cgjfbfijnvo48" path="res://game/grabbables/corn.tscn" id="25_cn0m7"]
+[ext_resource type="PackedScene" uid="uid://c4d033lexp3rt" path="res://game/grabbables/carrot.tscn" id="26_mkckd"]
+[ext_resource type="PackedScene" uid="uid://dgu16etsa4mfw" path="res://game/grabbables/potato.tscn" id="27_uk06g"]
+[ext_resource type="PackedScene" uid="uid://c3qywdgp3cdfu" path="res://game/grabbables/radish.tscn" id="28_lpn1w"]
+[ext_resource type="PackedScene" uid="uid://dgak7ejaacsbc" path="res://game/grabbables/tomato.tscn" id="29_ny3y8"]
+[ext_resource type="PackedScene" uid="uid://b0utcfpku10i1" path="res://game/score.tscn" id="30_nbhxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcvnk"]
 texture = ExtResource("1_7cpqq")
@@ -244,16 +244,19 @@ position = Vector2(241, 165)
 position = Vector2(298, 165)
 
 [node name="Truck" parent="." instance=ExtResource("1_a5mrr")]
-position = Vector2(1122, 88)
+position = Vector2(1056, 168)
 
 [node name="Truck2" parent="." instance=ExtResource("1_a5mrr")]
-position = Vector2(1120, 255)
+position = Vector2(1056, 256)
+
+[node name="Truck3" parent="." instance=ExtResource("1_a5mrr")]
+position = Vector2(1056, 344)
 
 [node name="Truck4" parent="." instance=ExtResource("1_a5mrr")]
-position = Vector2(1121, 419)
+position = Vector2(1056, 432)
 
 [node name="Truck5" parent="." instance=ExtResource("1_a5mrr")]
-position = Vector2(1121, 582)
+position = Vector2(1056, 520)
 
 [node name="Player" parent="." instance=ExtResource("2_ra5ri")]
 position = Vector2(570, 315)

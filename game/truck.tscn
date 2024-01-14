@@ -39,11 +39,11 @@ turbulence_noise_strength = 0.0
 turbulence_noise_scale = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ia4ro"]
-size = Vector2(27, 13)
+size = Vector2(42, 24.6667)
 
 [node name="Truck" type="Area2D"]
 texture_filter = 1
-scale = Vector2(6, 6)
+scale = Vector2(3, 3)
 script = ExtResource("1_chq34")
 
 [node name="TruckSprite" type="Sprite2D" parent="."]
@@ -51,8 +51,8 @@ texture_filter = 1
 texture = ExtResource("2_2pfmu")
 
 [node name="TextBubbleSprite" type="Sprite2D" parent="TruckSprite"]
-position = Vector2(-23.3333, -10.1667)
-scale = Vector2(0.861979, 0.846354)
+position = Vector2(-46.6667, -19.3333)
+scale = Vector2(1.6, 1.57)
 texture = ExtResource("2_pf5iv")
 
 [node name="Amount" type="Label" parent="TruckSprite/TextBubbleSprite"]
@@ -73,7 +73,7 @@ offset_bottom = 26.6831
 scale = Vector2(0.25, 0.25)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="TruckSprite"]
-position = Vector2(-14.1667, 5.16667)
+position = Vector2(-29.3333, 8)
 process_material = SubResource("ParticleProcessMaterial_8ag16")
 
 [node name="DeadlineTimer" type="Timer" parent="TruckSprite"]
@@ -84,7 +84,7 @@ one_shot = true
 [node name="DeliveryArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeliveryArea"]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-8.66667, -0.666667)
 shape = SubResource("RectangleShape2D_ia4ro")
 
 [connection signal="timeout" from="TruckSprite/DeadlineTimer" to="." method="_on_deadline_timer_timeout"]
