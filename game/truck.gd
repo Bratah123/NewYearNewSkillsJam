@@ -14,6 +14,7 @@ var crop
 var tween
 const Grabbable = preload("res://game/grabbables/grabbable.gd")
 const crops_name = ["carrot.png", "corn.png", "potato.png", "radish.png", "tomato.png"]
+const truck_complete = preload("res://assets/truck_order_complete.png")
 var delivered = false
 
 
@@ -80,6 +81,7 @@ func _on_delivery_area_area_entered(area):
 	# If a crop is within our range, submit the order
 	if parent_node is Grabbable and not parent_node.plantable and crop == parent_node.name:
 		delivered = true
+		truck_sprite.texture = truck_complete
 		score_count.increase_score()
 		player.release_current_held_item()
 		_leave_scene()
