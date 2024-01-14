@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="New Year New Skills Jam"
+config/name="Overcropped"
+config/description="Quickly plant and grow those vegetables to deliver those farming connections!"
+config/version="1.0.0"
 run/main_scene="res://game/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/icon.svg"
+config/icon="res://assets/overcropped_thumbnail.webp"
+config/windows_native_icon="res://assets/overcropped_tn.ico"
 
 [autoload]
 
