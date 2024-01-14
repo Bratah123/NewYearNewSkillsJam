@@ -244,19 +244,13 @@ position = Vector2(241, 165)
 position = Vector2(298, 165)
 
 [node name="Truck" parent="." instance=ExtResource("1_a5mrr")]
-position = Vector2(1056, 168)
-
-[node name="Truck2" parent="." instance=ExtResource("1_a5mrr")]
 position = Vector2(1056, 256)
 
-[node name="Truck3" parent="." instance=ExtResource("1_a5mrr")]
+[node name="Truck2" parent="." instance=ExtResource("1_a5mrr")]
 position = Vector2(1056, 344)
 
-[node name="Truck4" parent="." instance=ExtResource("1_a5mrr")]
+[node name="Truck3" parent="." instance=ExtResource("1_a5mrr")]
 position = Vector2(1056, 432)
-
-[node name="Truck5" parent="." instance=ExtResource("1_a5mrr")]
-position = Vector2(1056, 520)
 
 [node name="Player" parent="." instance=ExtResource("2_ra5ri")]
 position = Vector2(570, 315)
