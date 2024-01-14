@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7ce5mt8hsp5a"]
+[gd_scene load_steps=6 format=3 uid="uid://c7ce5mt8hsp5a"]
 
 [ext_resource type="Script" path="res://game/planting_area.gd" id="1_p7llv"]
 [ext_resource type="Texture2D" uid="uid://dqxoelrqjara5" path="res://assets/soil.png" id="1_x8jdj"]
 [ext_resource type="AudioStream" uid="uid://gaftrba5sr0d" path="res://assets/sounds/plant_crop.wav" id="3_8dh7g"]
+[ext_resource type="AudioStream" uid="uid://cwd0savwjip3u" path="res://assets/sounds/plant_growth.wav" id="4_6x7hl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj5io"]
 size = Vector2(32, 32.6667)
@@ -25,5 +26,9 @@ scale = Vector2(1e-05, 1e-05)
 stream = ExtResource("3_8dh7g")
 
 [node name="PlantGrowthTimer" type="Timer" parent="."]
+
+[node name="PlantGrowthAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6x7hl")
+volume_db = 24.0
 
 [connection signal="area_entered" from="PlantingArea" to="." method="_on_planting_area_area_entered"]

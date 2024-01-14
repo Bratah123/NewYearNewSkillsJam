@@ -48,6 +48,7 @@ func _reset_plant_area(seed_type):
 	vegetable_object.position = $".".position
 	vegetable_object.scale = Vector2(1.5, 1.5)
 	get_parent().add_child(vegetable_object)
+	$PlantGrowthAudio.play()
 
 
 """
