@@ -42,7 +42,7 @@ func _leave_scene():
 	if tween:
 		tween.kill()
 	tween = create_tween()
-	tween.tween_property(truck_sprite, "position", Vector2(200, 0), 3).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(truck_sprite, "position", Vector2(300, 0), 3).set_trans(Tween.TRANS_LINEAR)
 	return_timer.wait_time = rng.randi_range(3, 10)
 	return_timer.start()
 
@@ -90,4 +90,5 @@ func _on_delivery_area_area_entered(area):
 	elif parent_node is Grabbable and not parent_node.plantable and crop != parent_node.name:
 		delivered = false
 		score_count.decrease_score(10)
+		player.release_current_held_item()
 		_leave_scene()

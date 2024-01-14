@@ -39,7 +39,7 @@ turbulence_noise_strength = 0.0
 turbulence_noise_scale = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ia4ro"]
-size = Vector2(42, 24.6667)
+size = Vector2(28.6667, 15.3333)
 
 [node name="Truck" type="Area2D"]
 texture_filter = 1
@@ -81,12 +81,12 @@ one_shot = true
 
 [node name="ReturnTimer" type="Timer" parent="TruckSprite"]
 
-[node name="DeliveryArea" type="Area2D" parent="."]
+[node name="DeliveryArea" type="Area2D" parent="TruckSprite"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeliveryArea"]
-position = Vector2(-8.66667, -0.666667)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TruckSprite/DeliveryArea"]
+position = Vector2(-8.33333, -0.666667)
 shape = SubResource("RectangleShape2D_ia4ro")
 
 [connection signal="timeout" from="TruckSprite/DeadlineTimer" to="." method="_on_deadline_timer_timeout"]
 [connection signal="timeout" from="TruckSprite/ReturnTimer" to="." method="_on_return_timer_timeout"]
-[connection signal="area_entered" from="DeliveryArea" to="." method="_on_delivery_area_area_entered"]
+[connection signal="area_entered" from="TruckSprite/DeliveryArea" to="." method="_on_delivery_area_area_entered"]
