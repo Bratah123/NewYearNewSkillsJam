@@ -35,8 +35,6 @@ func _enter_scene():
 	
 	
 func _leave_scene():
-	if delivered == false:
-		score_count.decrease_score()
 	delivered = false
 	if tween:
 		tween.kill()
@@ -64,6 +62,7 @@ func _generate_crop():
 
 func _on_deadline_timer_timeout():
 	deadline_timer.stop()
+	score_count.decrease_score(20)
 	_leave_scene()
 
 
@@ -83,4 +82,8 @@ func _on_delivery_area_area_entered(area):
 		delivered = true
 		score_count.increase_score()
 		player.release_current_held_item()
+		_leave_scene()
+	elif parent_node is Grabbable and not parent_node.plantable and crop != parent_node.name:
+		delivered = false
+		score_count.decrease_score(10)
 		_leave_scene()
