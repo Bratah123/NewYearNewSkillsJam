@@ -5,6 +5,7 @@ extends Area2D
 @onready var texture_rect = $TruckSprite/TextBubbleSprite/TextureRect
 @onready var deadline_timer = $TruckSprite/DeadlineTimer
 @onready var return_timer = $TruckSprite/ReturnTimer
+@onready var score_count = get_node("../HUD")
 var amount_needed
 var rng = RandomNumberGenerator.new()
 const assets_folder = "res://assets/"
@@ -14,6 +15,7 @@ var tween
 const Grabbable = preload("res://game/grabbables/grabbable.gd")
 const crops_name = ["carrot.png", "corn.png", "potato.png", "radish.png", "tomato.png"]
 var delivered = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +35,9 @@ func _enter_scene():
 	
 	
 func _leave_scene():
+	if delivered == false:
+		score_count.decrease_score()
+	delivered = false
 	if tween:
 		tween.kill()
 	tween = create_tween()
@@ -75,8 +80,7 @@ func _on_delivery_area_area_entered(area):
 		return
 	# If a crop is within our range, submit the order
 	if parent_node is Grabbable and not parent_node.plantable and crop == parent_node.name:
-		print("SUBMITTED: ", parent_node.name)
-		print("Grabbable with type: ", parent_node.seed_type, " has been delivered")
-		delivered = false
+		delivered = true
+		score_count.increase_score()
 		player.release_current_held_item()
 		_leave_scene()

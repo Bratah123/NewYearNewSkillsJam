@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0utcfpku10i1"]
+
+[ext_resource type="FontFile" uid="uid://c6fiijs5868ei" path="res://assets/fonts/Peaberry.otf" id="1_6cyqd"]
+[ext_resource type="Script" path="res://game/score.gd" id="1_djmxy"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_djmxy")
+
+[node name="ScoreCount" type="Label" parent="."]
+offset_left = 952.0
+offset_top = 16.0
+offset_right = 1132.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("1_6cyqd")
+theme_override_font_sizes/font_size = 32
+text = "SCORE:0"
