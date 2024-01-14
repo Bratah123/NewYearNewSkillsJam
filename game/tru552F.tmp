@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://bonbjxcg5jnt1"]
+
+[ext_resource type="Script" path="res://game/truck.gd" id="1_chq34"]
+[ext_resource type="Texture2D" uid="uid://bf3dyavuldul" path="res://assets/truck_order.png" id="2_2pfmu"]
+[ext_resource type="Texture2D" uid="uid://c27xwjdc5tegl" path="res://assets/text_bubble.png" id="2_pf5iv"]
+[ext_resource type="FontFile" uid="uid://c6fiijs5868ei" path="res://assets/fonts/Peaberry.otf" id="4_ewh0q"]
+
+[sub_resource type="Gradient" id="Gradient_m2f77"]
+offsets = PackedFloat32Array(0, 0.0163934, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.885246, 0.885246, 0.885246, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jht0d"]
+gradient = SubResource("Gradient_m2f77")
+
+[sub_resource type="Gradient" id="Gradient_ierx5"]
+offsets = PackedFloat32Array(0.639344, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d5pwg"]
+gradient = SubResource("Gradient_ierx5")
+
+[sub_resource type="Curve" id="Curve_3haoj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j4xhl"]
+curve = SubResource("Curve_3haoj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8ag16"]
+particle_flag_disable_z = true
+gravity = Vector3(-98, 0, 0)
+scale_min = 14.24
+scale_max = 14.24
+scale_curve = SubResource("CurveTexture_j4xhl")
+color_ramp = SubResource("GradientTexture1D_d5pwg")
+color_initial_ramp = SubResource("GradientTexture1D_jht0d")
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia4ro"]
+size = Vector2(42, 24.6667)
+
+[node name="Truck" type="Area2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+script = ExtResource("1_chq34")
+
+[node name="TruckSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_2pfmu")
+
+[node name="TextBubbleSprite" type="Sprite2D" parent="TruckSprite"]
+position = Vector2(-46.6667, -19.3333)
+scale = Vector2(1.6, 1.57)
+texture = ExtResource("2_pf5iv")
+
+[node name="Amount" type="Label" parent="TruckSprite/TextBubbleSprite"]
+offset_left = -6.96073
+offset_top = -3.74154
+offset_right = 13.0393
+offset_bottom = 12.2585
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ewh0q")
+theme_override_font_sizes/font_size = 16
+
+[node name="TextureRect" type="TextureRect" parent="TruckSprite/TextBubbleSprite"]
+offset_left = -1.74018
+offset_top = -5.31692
+offset_right = 30.2598
+offset_bottom = 26.6831
+scale = Vector2(0.25, 0.25)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="TruckSprite"]
+position = Vector2(-29.3333, 8)
+process_material = SubResource("ParticleProcessMaterial_8ag16")
+
+[node name="DeadlineTimer" type="Timer" parent="TruckSprite"]
+one_shot = true
+
+[node name="ReturnTimer" type="Timer" parent="TruckSprite"]
+
+[node name="DeliveryArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeliveryArea"]
+position = Vector2(-8.66667, -0.666667)
+shape = SubResource("RectangleShape2D_ia4ro")
+
+[connection signal="timeout" from="TruckSprite/DeadlineTimer" to="." method="_on_deadline_timer_timeout"]
+[connection signal="timeout" from="TruckSprite/ReturnTimer" to="." method="_on_return_timer_timeout"]
+[connection signal="area_entered" from="DeliveryArea" to="." method="_on_delivery_area_area_entered"]

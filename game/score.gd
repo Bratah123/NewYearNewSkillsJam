@@ -18,3 +18,4 @@ func decrease_score(value):
 	
 func _update_score():
 	score_count.text = "Score:" + str(score)
+		
