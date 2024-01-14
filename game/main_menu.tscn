@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bca0blonpdt7h" path="res://assets/soil_tile-1.png" id="3_uyfvg"]
 [ext_resource type="FontFile" uid="uid://bojn4qknbfvir" path="res://assets/fonts/Minecraft.ttf" id="4_6cenq"]
 [ext_resource type="Texture2D" uid="uid://do21qj5jjt1m3" path="res://assets/tilled_soil_tile.png" id="4_etd5b"]
-[ext_resource type="Texture2D" uid="uid://bswamt4d5en7h" path="res://assets/seed_bag.png" id="5_12tn0"]
+[ext_resource type="Texture2D" uid="uid://bictoqlloc26t" path="res://assets/seed_bag.png" id="5_12tn0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7lehl"]
 texture = ExtResource("2_lag25")
@@ -114,6 +114,6 @@ texture_normal = ExtResource("3_sq0qy")
 ignore_texture_size = true
 stretch_mode = 3
 
-[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Control/Start" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Control/Help" to="." method="_on_help_pressed"]

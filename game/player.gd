@@ -28,6 +28,8 @@ func _handle_pick_up():
 			held_grabbable.reparent($PickableArea)
 			is_holding = true
 			_play_pickup_sound()
+			var offset = Vector2(5, -5)
+			held_grabbable.position += offset
 	elif Input.is_action_just_pressed("click") and is_holding:
 		held_grabbable.reparent(root_scene)
 		held_grabbable = null
