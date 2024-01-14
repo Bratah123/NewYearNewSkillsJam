@@ -12,8 +12,8 @@ func increase_score():
 	score += 10
 	_update_score()
 	
-func decrease_score():
-	score -= 20
+func decrease_score(value):
+	score -= value
 	_update_score()
 	
 func _update_score():
